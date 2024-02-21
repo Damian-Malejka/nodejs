@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Input, Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-syn',
@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./syn.component.css']
 })
 export class SynComponent {
+  @Input() zmiennaImport!:string[];
+  @Output() odpowiedz = new EventEmitter<string>();
+
+  wyslanie(){
+    this.odpowiedz.emit('Bede czekał');
+  }
 
 }

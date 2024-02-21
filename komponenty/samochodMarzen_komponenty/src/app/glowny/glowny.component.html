@@ -1,0 +1,9 @@
+<div id="baner" [style.background-color]="kolorb" [style.color]="kolort">Wybierz samochód marzeń:
+    <select [(ngModel)]="samochod">
+      <option [ngValue]="null">Brak wyboru</option>
+      <option *ngFor="let value of samochody" [ngValue]="value">{{value.marka}} {{value.model}}</option>
+    </select>
+    <br>
+    <button (click)="zmienKolor()" type="button" [class.przycisk]="aktywna" [style.color]="kolort">Zmień kolor tła</button>
+  </div>
+<app-szczegol [samochod]="samochod"></app-szczegol>

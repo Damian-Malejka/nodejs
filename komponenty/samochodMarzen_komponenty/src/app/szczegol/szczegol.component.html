@@ -1,0 +1,27 @@
+<div *ngIf="samochod">
+    <div id="panel_lewy">
+      <label class="check">
+        <input type="checkbox" [(ngModel)]="pokazZdjecie">Pokaz zdjecie
+      </label>
+    </div>
+    <div id="panel_srodkowy">
+      <p class="akapit">{{samochod.marka}} {{samochod.model}}
+        <ng-template #brakZdjecia>
+          <p class=center>Brak zdjęcia</p>
+        </ng-template>
+      </p>
+      <br>
+      <img class=center src="{{samochod.zdjecie}}" [class.zdjecie]="aktywna" *ngIf="pokazZdjecie else brakZdjecia">
+    </div>
+    <div id="panel_prawy">
+      <ng-container [ngSwitch]="samochod.type">
+        <img class="miniaturka" src="assets/images/sport.png" *ngSwitchCase="Rodzaj.sportowy">
+        <img class="miniaturka" src="assets/images/suv.png" *ngSwitchCase="Rodzaj.terenowy">
+        <img class="miniaturka" src="assets/images/camper.png" *ngSwitchCase="Rodzaj.kamper">
+      </ng-container>
+      <p>Dane:</p>
+      <ul>
+        <li *ngFor="let item of samochod.dane">{{item}}</li>
+      </ul>
+    </div>
+  </div>
