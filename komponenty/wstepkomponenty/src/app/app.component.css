@@ -1,0 +1,25 @@
+*{
+    text-align: center;
+}
+#baner{
+    clear:both;
+    padding:30px;
+}
+#panel_lewy{
+    width:33%;
+    float:left;
+}
+#panel_srodkowy{
+    width:33%;
+    float:left;
+}
+#panel_prawy{
+    width:33%;
+    float:left;
+}
+img{
+    width:300px;
+}
+.miniaturka{
+    width:100px
+}
